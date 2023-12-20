@@ -1,0 +1,49 @@
+<style>
+    .contenedor3{
+        margin-left: 300px;
+    }
+</style>
+
+<div class=" container-fluid py-4">
+    <div class="contenedor3  row">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+            <div class="card z-index-2 h-100">
+                <div class="card-header pb-0 pt-3 bg-transparent">
+                    <h4>Ingrese la información del animal:</h4>
+                    <form action="/guardarvaca" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="userId" value="{{user._id}}" />
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="String" class="form-control" name="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="animalBreed">Raza:</label>
+                            <input type="String" class="form-control" name="raza" id="raza">
+                        </div>
+                        <div class="form-group">
+                            <label for="animalvacuna">vacuna:</label>
+                            <input type="String" class="form-control" name="vacuna" id="vacuna">
+                        </div>
+                        <div class="form-group">
+                            <label for="animalBirthdate">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" name="fecha_de_nacimiento" id="fecha_de_nacimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="animal">litros de leche Dia 1:</label>
+                            <input type="Number" class="form-control" name="litros_de_leche" id="litros_de_leche">
+                        </div>
+                        <div class="form-group">
+                            <label for="animalDescription">Descripción:</label>
+                            <textarea class="form-control" name="descripcion" id="Descripcion" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="imagen">ingrese una foto:</label>
+                          <input type="file" name="imagen" accept="image/*" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

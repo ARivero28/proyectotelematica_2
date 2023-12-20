@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/logo.jpg">
+  <link rel="icon" type="image/png" href="/assets/img/logo.png">
+  <title>
+    MI PROYECTO
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+
+  <link id="pagestyle" href="/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+
+
+</head>
+
+<style>
+  .h12 {
+    color: #854130;
+    /* Color del texto */
+    font-size: 18px;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Grosor de fuente */
+    text-align: center;
+    /* Alineación de texto */
+    /* Otros estilos según tus preferencias */
+  }
+  .logo1{
+    width: 80px;
+    border-radius: 50%;
+  }
+</style>
+
+<body class="g-sidenav-show  body bg-gray-100">
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <main class="main-content position-relative  ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg bg-body-tertiary bg-white">
+  <div class="container-fluid">
+    <!--<a href="/"><img src="/assets/img/logo.png"alt="logo" style="width: 50px;"></a>-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a href="/"><img class="logo1" src="/assets/img/logo.png" alt="logo"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Acciones
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/registrarvaca">REGISTRAR GANADO</a></li>
+            {{#if user}}
+              <li><a class="dropdown-item" href="/mostrarvaca/{{user._id}}">INVENTARIO GANADO</a></li>
+              <li><a class="dropdown-item" href="/produccion/{{user._id}}">MI PRODUCCION</a></li>
+            {{/if}}
+          </ul>
+        </li>
+        {{#if user}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout">Salir</a>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/signin">Ingresar</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- End Navbar -->
+    {{!-- FIN BARRA NAVEGACIÓN--}}
+
+
+    {{!-- AQUI LO INTERNO--}}
+    {{> messages }}
+    {{> errors }}
+    {{{ body }}}
+
+    {{!-- FIN LO INTERNO--}}
+
+
+    <footer class="footer pt-3 contenedor2 ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              ©
+              <script>
+                document.write(new Date().getFullYear())
+              </script>,
+              Realizado por <i class="fa fa-envira"></i>
+              <a href="" class="font-weight-bold" target="_blank">Los ganaderos</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </main>
+  <!--   Core JS Files   -->
+  <script src="/assets/js/core/popper.min.js"></script>
+  <script src="/assets/js/core/bootstrap.min.js"></script>
+  <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="/assets/js/plugins/chartjs.min.js"></script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+  
+</body>
+
+</html>

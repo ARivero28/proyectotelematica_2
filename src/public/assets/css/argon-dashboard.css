@@ -1,0 +1,81 @@
+.contenedor{
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.contenedor2{
+  background-color: aquamarine;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.body {
+  background-image: url('/assets/img/fondo.png');
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-position: center; /* Centra la imagen en el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+  background-attachment: fixed; /* Hace que la imagen de fondo sea fija en la ventana gráfica */
+  color: #000; /* Cambia el color del texto para que sea legible en la imagen de fondo */
+}
+
+.bordes{
+  width: 200px;
+  border-radius: 50%;
+}
+
+.bordes1{
+  margin: 10px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+
+.parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.child:hover {
+  background-color: white;
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+  transform: perspective(180px) rotateX(60deg) translateY(2px);
+  box-shadow: 0px 10px 10px rgb(1, 49, 182);
+}
+
+.buttone {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.buttone:hover {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+  border-radius: 50%;
+}

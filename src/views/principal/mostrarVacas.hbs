@@ -1,0 +1,31 @@
+<style>
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin:
+  16px; width: 300px; text-align: center; display: inline-block; } .imagen {
+  max-width: 100%; height: 250px; border-radius: 4px; object-fit: cover; }
+  .c5{
+    margin: 230px;
+    background-color: white;
+    height: 80px;
+    height: 100px;
+  }
+</style>
+  {{#each listadovaca}}
+    <div class="card">
+      <img class="imagen" src="{{image.secure_url}}" alt="Imagen del producto" />
+      <h5>Nombre: {{nombre}}</h5>
+      <h5>Raza: {{raza}}</h5>
+      <h5>Fecha de nacimiento: {{fecha_de_nacimiento}}</h5>
+      <h5>Vacuna: {{vacuna}}</h5>
+      {{#each ../totalLitrosDeLeche}}
+        <h5>Produccion total: {{totalLitrosDeLeche}}</h5>
+      {{/each}}
+      <h5>Descripcion: {{descripcion}}</h5>
+      <a href="/editarvaca/{{_id}}" class="btn btn-success">Registrar Produccion</a>
+      <a href="/eliminar/vaca/{{_id}}" class="btn btn-danger">Eliminar</a>
+    </div>
+  {{else}}
+    <div class="c5" style="text-align: center;">
+      <h1>Aun no ha registrado ninguna vaca</h1>
+      <a class="btn btn-success" href="/registrarvaca">REGISTRAR GANADO</a>
+    </div>
+  {{/each}}

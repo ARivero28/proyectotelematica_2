@@ -1,0 +1,52 @@
+<style>
+  .c5{
+    margin: 150px;
+  }
+  .logo{
+    width: 200px;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+</style>
+  <main class=" main-content  mt-0">
+    <div class="c5 container">
+      <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+          <div class="card z-index-0">
+            <div class="card-header text-center pt-4">
+              <h5>Ingrese los siguientes datos</h5>
+              <img class="logo" src="/assets/img/logo.png" alt="logo">
+            </div>
+            <div class="card-body">
+<form action="/users/signup" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Nombre Completo">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="identificacion" class="form-control" name="identificacion" placeholder="Identificación (cedula)">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" >
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
+          </div>
+          <button class="btn btn-primary btn-block btn-lg w-100 mt-4 mb-0">
+            Registrar 
+          </button>
+        </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+

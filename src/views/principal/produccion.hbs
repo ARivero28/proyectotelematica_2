@@ -1,0 +1,63 @@
+<style>
+  .container{
+    margin: 220px;
+    justify-content: center;
+    background-color: rgb(223, 215, 215);
+    width: 550px;
+    height: 100px;
+  }
+  #tabla-container { margin: 150px; /* Márgenes para el contenedor */
+  background-color: white; /* Fondo blanco para la tabla */ padding: 20px; /*
+  Espaciado interno para el contenedor */ border-radius: 10px; /* Bordes
+  redondeados para el contenedor */ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*
+  Sombra suave para el contenedor */ } table { border-collapse: collapse; width:
+  100%; } th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+  th { background-color: #f2f2f2; /* Color de fondo gris para los encabezados */
+  }
+</style>
+{{#if (gt numeroDeVacasRegistradas 0)}}
+<div id="tabla-container">
+  <table>
+    <tr>
+      <th>Número de vacas registradas</th>
+      <td>{{numeroDeVacasRegistradas}}</td>
+    </tr>
+    <tr>
+      <th>Suma diaria de litros de leche</th>
+      {{#if (gt sumaDiaria 0)}}
+        <td>{{sumaDiaria}}</td>
+      {{else}}
+        <td>No ha registrado la produccion hoy</td>
+      {{/if}}
+    </tr>
+    {{#if semanas}}
+      <tr>
+        <th>Suma semanal</th>
+        <td>
+          <table>
+            {{#each semanas as |key value|}}
+              <tr>
+                <td>{{value}}</td>
+                <td>{{key}}</td>
+              </tr>
+            {{/each}}
+          </table>
+        </td>
+      </tr>
+    {{/if}}
+    <tr>
+      <th>Suma mensual</th>
+      {{#if (gt mes 0)}}
+        <td>{{mes}}</td>
+      {{else}}
+        <td>Aun no ha cumplido el mes</td>
+      {{/if}}
+    </tr>
+  </table>
+</div>
+{{else}}
+<div class="container" style="text-align: center;">
+  <h1>No tiene vacas registradas</h1>
+  <a class="btn btn-success" href="/registrarvaca">REGISTRAR GANADO</a>
+</div>
+{{/if}}

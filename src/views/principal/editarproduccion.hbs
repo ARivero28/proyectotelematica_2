@@ -1,0 +1,133 @@
+<style>
+  .c4{ margin: 150px; }
+  .c5{
+    margin: 230px;
+    background-color: white;
+    height: 80px;
+  }
+</style>
+{{#if  (eq primerDiaSinValor null)}}
+  <div class="c5">
+    <h1 style="text-align: center;">ya se registro el septimo dia de la semana</h1>
+  </div>
+{{else}}
+  <div class="c4 container-fluid py-4">
+    <div class="row">
+      <div class="col-lg-7 mb-lg-0 mb-4">
+        <div class="card z-index-2 h-100">
+          <div
+            style="height: 200px; justify-content: center;"
+            class="card-header pb-0 pt-3 bg-transparent"
+          >
+            <h4>Ingrese la producción de leche de hoy:</h4>
+            <form style="text-align: center;"
+              id="formularioLeche"
+              action="/actualizar/litros/leche/{{id}}"
+              method="post"
+            >
+              {{#if (eq primerDiaSinValor "dia1")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 1:</label>
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input type="hidden" name="dia" value="dia1" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia2")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 2:</label>
+                  <input type="hidden" name="dia" value="dia2" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia3")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 3:</label>
+                  <input type="hidden" name="dia" value="dia3" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia4")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 4:</label>
+                  <input type="hidden" name="dia" value="dia4" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia5")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 5:</label>
+                  <input type="hidden" name="dia" value="dia5" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia6")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 6:</label>
+                  <input type="hidden" name="dia" value="dia6" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              {{#if (eq primerDiaSinValor "dia7")}}
+                <div class="form-group">
+                  <label for="litros_de_leche">Litros de leche del dia 7:</label>
+                  <input type="hidden" name="dia" value="dia7" />
+                  <input type="hidden" name="userId" value="{{user._id}}" />
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="litros_de_leche"
+                    id="litros_de_leche"
+                    required
+                  />
+                </div>
+              {{/if}}
+              <button type="submit" class="btn btn-success">Guardar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/if}}
